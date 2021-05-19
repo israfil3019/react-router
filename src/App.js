@@ -3,23 +3,23 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import NotFound from "./components/NotFound";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <div className="App">
         <nav>
           <h1>My way</h1>
           <ul>
             <li>
-              <a href="/">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="/about">About</a>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <a href="/contact">Contact</a>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </nav>
@@ -30,7 +30,7 @@ function App() {
           <Route component={NotFound} />
         </Switch>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
