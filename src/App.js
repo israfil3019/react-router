@@ -4,6 +4,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import NotFound from "./components/NotFound";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Details from "./components/Details";
 
 function App() {
   return (
@@ -21,12 +22,16 @@ function App() {
             <li>
               <Link to="/contact">Contact</Link>
             </li>
+            <li>
+              <Link to="/details/abc">Details</Link>
+            </li>
           </ul>
         </nav>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/About" exact component={About} />
-          <Route path="/Contact" exact component={Contact} />
+          <Route path="/about" exact component={About} />
+          <Route path="/contact" exact component={Contact} />
+          <Route path="/details/:id" component={Details} />
           <Route component={NotFound} />
         </Switch>
       </div>
