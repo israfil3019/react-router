@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import "./style.css";
 
 function Home() {
   const [posts, setPosts] = useState();
@@ -20,8 +21,8 @@ function Home() {
     <div className="App">
       {posts?.map((post, index) => (
         <div
+          className="home-container"
           key={index}
-          style={{ border: "1px solid ", margin: 10, cursor: "pointer" }}
           onClick={() => postHandler(post.id)}
         >
           <p>{post.title}</p>

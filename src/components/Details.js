@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory, useLocation } from "react-router-dom";
+import "./style.css";
 
 const Details = (props) => {
   const [post, setPost] = useState();
@@ -22,10 +23,9 @@ const Details = (props) => {
   };
 
   return (
-    <div>
+    <div className="details-container">
       <h2>Details {id} </h2>
-      <p>{post?.id}</p>
-      <p>{post?.title}</p>
+      <p className="details-title">{post?.title}</p>
       <p>{post?.body}</p>
       <button onClick={goHome}>Go Home</button>
     </div>
